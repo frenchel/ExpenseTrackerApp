@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--OVERVIEW BUTTON-->
+    <item
+        android:id="@+id/overview"
+        android:title="Overview"
+        android:icon="@drawable/round_bar_chart_24"/>
+
+
+    <!--RECORDS BUTTON-->
+    <item
+        android:id="@+id/records"
+        android:title="Records"
+        android:icon="@drawable/round_format_list_numbered_24"/>
+
+
+    <!--SPACE FOR ADD RECORD BUTTON-->
+    <item
+        android:id="@+id/fab"
+        android:title=""
+        android:enabled="false"/>
+
+
+    <!--WALLETS BUTTON-->
+    <item
+        android:id="@+id/wallets"
+        android:title="Wallets"
+        android:icon="@drawable/round_wallet_24"/>
+
+
+    <!--PROFILE BUTTON-->
+    <item
+        android:id="@+id/profile"
+        android:title="Profile"
+        android:icon="@drawable/round_face_6_24"/>
+</menu>
