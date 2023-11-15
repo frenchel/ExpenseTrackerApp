@@ -9,5 +9,11 @@
         <item name="android:fontFamily">@font/inter</item>
         <item name="android:textColor">@color/black</item>
     </style>
-    <style name="Theme.ExpenseTrackerApp" parent="Base.Theme.ExpenseTrackerApp"/>
+
+    <style name="Theme.ExpenseTrackerApp" parent="Base.Theme.ExpenseTrackerApp" />
+
+    <style name="ThemeOverlay.ExpenseTrackerApp.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_600</item>
+        <item name="fullscreenTextColor">@color/light_blue_A200</item>
+    </style>
 </resources>

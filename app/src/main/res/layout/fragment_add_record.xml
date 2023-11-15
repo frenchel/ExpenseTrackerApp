@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/frame_layout"
+    tools:context=".AddRecordFragment">
+
+    <!--LAYOUT FOR THE APP NAME-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ledger"
+            android:textColor="@color/darkpurple"
+            android:textSize="20sp"
+            android:textAlignment="textEnd"
+            android:fontFamily="@font/inter_bold"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="life"
+            android:textColor="@color/pink"
+            android:textSize="20sp"
+            android:fontFamily="@font/inter_bold"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <!--TITLE: ADD RECORD-->
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="Add Record"
+            android:textSize="35sp"
+            />
+
+        <!--TEXTFIELD - TITLE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:hint="Title">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:background="@drawable/rounded_edittext"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--TEXTFIELD - AMOUNT-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_amount_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:hint="Amount"
+            app:prefixText="@string/expense_peso">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:background="@drawable/rounded_edittext"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--DROPDOWN - TRANSACTION TYPE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_transactionType_view"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Transaction Type"
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/et_transactionType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/rounded_edittext"
+                android:contentDescription="Transaction Type Selection"
+                android:inputType="none"
+                android:labelFor="@id/et_transactionType"
+                tools:ignore="EditableContentDescCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--DROPDOWN - CATEGORY-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_tag_view"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:hint="Category">
+
+            <AutoCompleteTextView
+                android:id="@+id/et_tag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext"
+                android:contentDescription="Category Selection"
+                android:inputType="none"
+                android:labelFor="@id/et_tag"
+                tools:ignore="EditableContentDescCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--DATE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_when_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="Date"
+            app:endIconDrawable="@drawable/round_calendar_month_24"
+            app:endIconMode="custom">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_when"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:background="@drawable/rounded_edittext"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--TEXTFIELD - NOTE-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_note_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:hint="Note"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_edittext"
+                android:inputType="text"
+                android:maxLength="240"
+                android:maxLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/saveAddRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:paddingVertical="13dp"
+                android:layout_weight="1"
+                android:text="SAVE"
+                android:textSize="20sp"
+                android:backgroundTint="@color/darkpurple"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/inter_bold"/>
+
+            <Button
+                android:id="@+id/cancelAddRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingVertical="13dp"
+                android:layout_weight="1"
+                android:text="CANCEL"
+                android:textSize="20sp"
+                android:backgroundTint="@color/darkpurple"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/inter_bold"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

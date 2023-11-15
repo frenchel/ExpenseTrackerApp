@@ -17,7 +17,6 @@
 
     <!--SPACE FOR ADD RECORD BUTTON-->
     <item
-        android:id="@+id/fab"
         android:title=""
         android:enabled="false"/>
 

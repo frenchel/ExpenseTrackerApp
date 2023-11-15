@@ -47,4 +47,5 @@
             app:layout_anchor="@id/bottomAppbar"
             app:maxImageSize="30dp"
             />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Ledger</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="expense_peso"> - &#x20B1;</string>
+    <string name="hello_blank_fragment"> BLANK FRAGMENT </string>
+
 </resources>
