@@ -6,12 +6,36 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 
 class IncomeFragment : Fragment() {
 
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var dataList: ArrayList<DataClass>
+    lateinit var imageList: Array<Int>
+    lateinit var titleList: Array<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        imageList = arrayOf(
+            R.drawable.cute_dog
+        )
+
+        titleList = arrayOf(
+            "1st Term Tuition Fee"
+        )
+
+    }
+
+    private fun getData() {
+        for(i in imageList.indices) {
+            val dataClass = DataClass(imageList[i], titleList[i])
+            dataList.add(dataClass)
+        }
+        recyclerView.adapter = AdapterClass(dataList)
     }
 
     override fun onCreateView(
@@ -20,14 +44,12 @@ class IncomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_income, container, false)
 
-        val replaceIncomeToOverview = view.findViewById<Button>(R.id.incomeToOverview)
-        replaceIncomeToOverview.setOnClickListener {
-            val newFragment = OverviewFragment()
-            val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, newFragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
+        // RECYCLER
+        recyclerView = view.findViewById(R.id.recyclerRecords)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.setHasFixedSize(true)
+        dataList = ArrayList()
+        getData()
 
         return view
     }

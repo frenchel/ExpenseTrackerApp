@@ -11,85 +11,108 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!--LAYOUT FOR THE APP NAME-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginVertical="10dp"
+            android:orientation="horizontal">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:text="ledger"
+                android:textColor="@color/darkpurple"
+                android:textSize="20sp"
+                android:textAlignment="textEnd"
+                android:fontFamily="@font/inter_bold"
+                />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/header_expenseincome"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <Button
-                        android:id="@+id/expenseToOverview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_marginLeft="10dp"
-
-                        android:paddingLeft="-3dp"
-                        android:paddingTop="-5dp"
-                        android:text="&#x3c; BACK"
-                        android:textColor="@color/darkpurple"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="-10dp"
-                        android:layout_marginBottom="15dp"
-                        android:fontFamily="@font/inter_bold"
-                        android:text="Expenses"
-                        android:textAlignment="center"
-                        android:textSize="35sp" />
-                </LinearLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="life"
+                android:textColor="@color/pink"
+                android:textSize="20sp"
+                android:fontFamily="@font/inter_bold"
+                />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
             android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="Expenses"
+                android:textSize="35sp"
+                />
+
+            <!--TOTAL EXPENSES-->
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:layout_marginVertical="10dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Education"
-                    android:textSize="15sp"
-                    />
+                    android:background="@drawable/bg_overview"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/red"
-                    android:text="- 40,000.00"/>
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:text="Total Expense"
+                        android:textSize="18sp"
+                        />
 
-            <ProgressBar
-                android:id="@+id/topExpense1"
-                style="?android:attr/progressBarStyleHorizontal"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="&#x20B1; 45,550.00"
+                        android:textSize="30sp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/inter_bold"
+                        />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="15dp"
+                android:fontFamily="@font/inter_bold"
+                android:text="Records"
+                android:textSize="25sp"
+                />
+
+            <!--RECYCLER VIEW-->
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:progressDrawable="@drawable/custom_progressbar" />
+                android:layout_height="wrap_content"
+                android:id="@+id/recyclerRecords"/>
         </LinearLayout>
     </FrameLayout>
 </ScrollView>

@@ -10,8 +10,8 @@
 
     <!--RECORDS BUTTON-->
     <item
-        android:id="@+id/records"
-        android:title="Records"
+        android:id="@+id/expense"
+        android:title="Expense"
         android:icon="@drawable/round_format_list_numbered_24"/>
 
 
@@ -23,8 +23,8 @@
 
     <!--WALLETS BUTTON-->
     <item
-        android:id="@+id/wallets"
-        android:title="Wallets"
+        android:id="@+id/income"
+        android:title="Income"
         android:icon="@drawable/round_wallet_24"/>
 
 

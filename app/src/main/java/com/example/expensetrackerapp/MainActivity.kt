@@ -24,12 +24,12 @@ class MainActivity : AppCompatActivity() {
                     replaceFragment(OverviewFragment())
                     true
                 }
-                R.id.records -> {
-                    replaceFragment(RecordsFragment())
+                R.id.expense -> {
+                    replaceFragment(ExpenseFragment())
                     true
                 }
-                R.id.wallets -> {
-                    replaceFragment(WalletsFragment())
+                R.id.income -> {
+                    replaceFragment(IncomeFragment())
                     true
                 }
                 R.id.profile -> {

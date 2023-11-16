@@ -11,12 +11,35 @@ import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class OverviewFragment : Fragment() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var dataList: ArrayList<DataClass>
+    lateinit var imageList: Array<Int>
+    lateinit var titleList: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        imageList = arrayOf(
+            R.drawable.cute_dog
+        )
+
+        titleList = arrayOf(
+            "1st Term Tuition Fee"
+        )
+
+    }
+
+    private fun getData() {
+        for(i in imageList.indices) {
+            val dataClass = DataClass(imageList[i], titleList[i])
+            dataList.add(dataClass)
+        }
+        recyclerView.adapter = AdapterClass(dataList)
     }
 
     @SuppressLint("MissingInflatedId")
@@ -26,80 +49,12 @@ class OverviewFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_overview, container, false)
 
-
-        //TOP EXPENSE 1 - YUNG PINAKAMATAAS NA TOTAL EXPENSE FOR THE LAST 30 DAYS
-        val progressbar1 = view.findViewById<ProgressBar>(R.id.topExpense1)
-        progressbar1.max = 40000 //kung pwede sana dapat ang max value nito ay yung highest total expense for that month/last 30 days
-        val currentProgress = 40000
-
-        ObjectAnimator.ofInt(progressbar1, "progress", currentProgress)
-            .setDuration(2000)
-            .start()
-
-        //TOP EXPENSE 2
-        val progressBar2 = view.findViewById<ProgressBar>(R.id.topExpense2)
-        progressBar2.max = 40000
-        val currentProgress2 = 15000
-
-        ObjectAnimator.ofInt(progressBar2, "progress", currentProgress2)
-            .setDuration(2000)
-            .start()
-
-        //TOP EXPENSE 3
-        val progressBar3 = view.findViewById<ProgressBar>(R.id.topExpense3)
-        progressBar3.max = 40000
-        val currentProgress3 = 10000
-
-        ObjectAnimator.ofInt(progressBar3, "progress", currentProgress3)
-            .setDuration(2000)
-            .start()
-
-        //TOP INCOME 1 - YUNG PINAKAMATAAS NA TOTAL INCOME FOR THE LAST 30 DAYS
-        val progressBar4 = view.findViewById<ProgressBar>(R.id.topIncome1)
-        progressBar4.max = 50000
-        val currentProgress4 = 50000
-
-        ObjectAnimator.ofInt(progressBar4, "progress", currentProgress4)
-            .setDuration(2000)
-            .start()
-
-        //TOP INCOME 2
-        val progressBar5 = view.findViewById<ProgressBar>(R.id.topIncome2)
-        progressBar5.max = 50000
-        val currentProgress5 = 10000
-
-        ObjectAnimator.ofInt(progressBar5, "progress", currentProgress5)
-            .setDuration(2000)
-            .start()
-
-        //TOP INCOME 3
-        val progressBar6 = view.findViewById<ProgressBar>(R.id.topIncome3)
-        progressBar6.max = 50000
-        val currentProgress6 = 5000
-
-        ObjectAnimator.ofInt(progressBar6, "progress", currentProgress6)
-            .setDuration(2000)
-            .start()
-
-
-        //SEE ALL BUTTON
-        val replaceFragmentExpense = view.findViewById<TextView>(R.id.replaceFragmentExpense)
-        replaceFragmentExpense.setOnClickListener {
-            val newFragment = ExpenseFragment()
-            val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, newFragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-
-        val replaceFragmentIncome = view.findViewById<TextView>(R.id.replaceFragmentIncome)
-        replaceFragmentIncome.setOnClickListener {
-            val newFragment = IncomeFragment()
-            val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.frame_layout, newFragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
+        // RECYCLER
+        recyclerView = view.findViewById(R.id.recyclerRecords)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.setHasFixedSize(true)
+        dataList = ArrayList()
+        getData()
 
         return view
     }
