@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 
 class ProfileFragment : Fragment() {
@@ -26,7 +27,32 @@ class ProfileFragment : Fragment() {
         dialog.setContentView(R.layout.dialog_editprofile)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
+        val buttonCancel = dialog.findViewById<Button>(R.id.cancelEditProfile)
+        buttonCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        val buttonSave = dialog.findViewById<Button>(R.id.saveEditProfile)
+        buttonSave.setOnClickListener {
+            dialog.dismiss()
+            showSavedDialog()
+        }
+
+
         dialog.show()
+    }
+
+    private fun showSavedDialog() {
+        val savedDialog = Dialog(requireContext())
+        savedDialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        savedDialog.setContentView(R.layout.dialog_saved)
+        savedDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val delayMillis = 2000L // 2 seconds
+        savedDialog.show()
+        savedDialog.findViewById<View>(R.id.cardviewSaved).postDelayed({
+            savedDialog.dismiss()
+        }, delayMillis)
     }
 
     override fun onCreateView(

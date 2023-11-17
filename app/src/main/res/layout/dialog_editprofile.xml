@@ -89,7 +89,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/saveAddRecord"
+                android:id="@+id/saveEditProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
@@ -102,7 +102,7 @@
                 android:fontFamily="@font/inter_bold"/>
 
             <Button
-                android:id="@+id/cancelAddRecord"
+                android:id="@+id/cancelEditProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

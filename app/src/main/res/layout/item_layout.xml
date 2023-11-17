@@ -14,13 +14,27 @@
         android:padding="10dp"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Oct 30 2023"
-            android:textColor="@color/darkpurple"
-            android:fontFamily="@font/inter_bold"
-            />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Oct 30 2023"
+                android:textSize="16.5sp"
+                android:textColor="@color/darkpurple"
+                android:fontFamily="@font/inter_bold"
+                />
+
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:id="@+id/iconEditRecord"
+                android:src="@drawable/ic_action_more_horiz"/>
+        </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
