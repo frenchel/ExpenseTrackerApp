@@ -1,7 +1,37 @@
 <resources>
     <string name="app_name">Ledger</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="expense_peso"> - &#x20B1;</string>
+    <string name="expense_peso">&#x20B1;</string>
     <string name="hello_blank_fragment"> BLANK FRAGMENT </string>
+
+    <string-array name="transactions">
+        <item>Expense</item>
+        <item>Income</item>
+    </string-array>
+
+    <string-array name="categories">
+        <item>Child Support</item>
+        <item>Communication, PC, Phone</item>
+        <item>Coupons</item>
+        <item>Dividends, Interests</item>
+        <item>Education</item>
+        <item>Financial</item>
+        <item>Food and Beverages</item>
+        <item>Gifts</item>
+        <item>Grants, Dues</item>
+        <item>Healthcare</item>
+        <item>Housing</item>
+        <item>Investments</item>
+        <item>Life and Entertainment</item>
+        <item>Pets</item>
+        <item>Profit</item>
+        <item>Refunds</item>
+        <item>Rental</item>
+        <item>Sales, Wages</item>
+        <item>Salary</item>
+        <item>Shopping</item>
+        <item>Transportation</item>
+        <item>Vehicle</item>
+    </string-array>
 
 </resources>

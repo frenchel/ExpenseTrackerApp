@@ -110,7 +110,7 @@
 
         <!--DROPDOWN - CATEGORY-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_tag_view"
+            android:id="@+id/et_category_view"
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -118,19 +118,39 @@
             android:hint="Category">
 
             <AutoCompleteTextView
-                android:id="@+id/et_tag"
+                android:id="@+id/et_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_edittext"
                 android:contentDescription="Category Selection"
                 android:inputType="none"
-                android:labelFor="@id/et_tag"
+                android:labelFor="@id/et_category"
                 tools:ignore="EditableContentDescCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--DATE-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/et_when_view"
+            android:id="@+id/et_date_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:hint="Date"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/round_calendar_month_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:background="@drawable/rounded_edittext"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!--<com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/et_date_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
@@ -141,12 +161,12 @@
             app:endIconMode="custom">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_when"
+                android:id="@+id/et_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
                 android:background="@drawable/rounded_edittext"/>
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
         <!--TEXTFIELD - NOTE-->
         <com.google.android.material.textfield.TextInputLayout

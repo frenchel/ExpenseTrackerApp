@@ -110,6 +110,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/textviewUsername"
                     android:paddingVertical="7dp"
                     android:paddingHorizontal="10dp"
                     android:hint="Username"
@@ -135,6 +136,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/textviewEmail"
                     android:paddingVertical="7dp"
                     android:paddingHorizontal="10dp"
                     android:hint="Email"
@@ -160,6 +162,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/textviewPassword"
                     android:paddingVertical="7dp"
                     android:paddingHorizontal="10dp"
                     android:hint="Password"
@@ -218,7 +221,7 @@
             tools:layout_editor_absoluteX="20dp">
 
             <Button
-                android:id="@+id/saveAddRecord"
+                android:id="@+id/logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingVertical="13dp"

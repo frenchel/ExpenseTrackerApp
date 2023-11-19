@@ -55,7 +55,6 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -69,7 +68,7 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/overviewUsername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -131,6 +130,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/overviewCurrentBalance"
                         android:text="&#x20B1; 45,550.00"
                         android:textSize="30sp"
                         android:textAlignment="center"
@@ -167,6 +167,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/overviewTotalExpense"
                         android:text="&#x20B1; 45,550.00"
                         android:textSize="20sp"
                         android:textColor="@color/white"
@@ -196,6 +197,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/overviewTotalIncome"
                         android:text="&#x20B1; 45,550.00"
                         android:textSize="20sp"
                         android:fontFamily="@font/inter_bold"
@@ -204,7 +206,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!--RECENT-->
+            <!--TEXTVIEW - RECENT-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -229,7 +231,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/recyclerRecords"/>
-
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>

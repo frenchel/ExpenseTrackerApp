@@ -43,12 +43,12 @@
                 android:src="@drawable/round_account_box_24"/>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/et_title_view"
+                android:id="@+id/textviewUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="New username">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/et_title"
+                    android:id="@+id/et_textviewUsername"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -73,10 +73,12 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/textviewPassword"
                 android:hint="New password">
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/et_textviewPassword"
                     android:inputType="text"
                     android:background="@drawable/rounded_edittext"/>
             </com.google.android.material.textfield.TextInputLayout>

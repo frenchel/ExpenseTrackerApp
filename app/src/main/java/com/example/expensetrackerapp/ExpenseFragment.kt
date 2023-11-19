@@ -13,28 +13,13 @@ import androidx.recyclerview.widget.RecyclerView
 class ExpenseFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: AdapterClass
     private lateinit var dataList: ArrayList<DataClass>
-    lateinit var imageList: Array<Int>
-    lateinit var titleList: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        imageList = arrayOf(
-            R.drawable.cute_dog
-        )
 
-        titleList = arrayOf(
-            "1st Term Tuition Fee"
-        )
-    }
-
-    private fun getData() {
-        for(i in imageList.indices) {
-            val dataClass = DataClass(imageList[i], titleList[i])
-            dataList.add(dataClass)
-        }
-        recyclerView.adapter = AdapterClass(dataList)
     }
 
 
@@ -44,12 +29,13 @@ class ExpenseFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_expense, container, false)
 
-        // RECYCLER
-        recyclerView = view.findViewById(R.id.recyclerRecords)
+        recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.setHasFixedSize(true)
+
         dataList = ArrayList()
-        getData()
+        adapter = AdapterClass(requireContext(), dataList)
+
+        recyclerView.adapter = adapter
 
         return view
     }
